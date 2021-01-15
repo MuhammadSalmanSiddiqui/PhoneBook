@@ -1,0 +1,18 @@
+﻿@model InternetPhoneBook.Models.PersonModel
+
+<div class="removeConfirm">
+    <div class="alert alert-danger" role="alert" >
+        <h4 class="alert-heading">Remove person</h4>
+        <p>
+            do you want to delete:
+        </p>
+        <p id="name">
+            @Model.FirstName @Model.LastName
+        </p>
+        <hr>
+        <form asp-action="Remove" asp-route-id="@Model.ID" method="post">
+            <input class="btn btn-danger" type="submit" value="Confirm" />
+        </form>
+    </div>
+</div>
+

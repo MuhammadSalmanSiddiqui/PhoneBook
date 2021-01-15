@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/cover.css" rel="stylesheet">
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="starter-template">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#">PhoneBook</a>
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault" style="min-width:50rem">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <span class="badge badge-pill badge-secondary"><a asp-action="Index" class="nav-link">Home</a></span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="badge badge-pill badge-success"><a asp-action="Add" class="nav-link">Add new person</a></span>
+                    </li>
+                </ul>
+
+                
+                <form asp-action="Search" method="get" class="form-inline my-2 my-lg-0">
+                    <input name="name" class="form-control mr-sm-2" type="text" placeholder="Alicja" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        @RenderBody()
+    </div>
+</body>
+</html>

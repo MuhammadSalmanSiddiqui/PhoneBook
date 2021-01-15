@@ -1,0 +1,84 @@
+﻿@model List<InternetPhoneBook.Models.PersonModel>
+
+@if (TempData["Info"] != null)
+{
+    <div class="alert alert-info" role="alert">
+        @TempData["Info"]
+    </div>
+}
+
+@if (ViewBag.Info != null)
+{
+    <div class="alert alert-primary" role="alert">
+        @ViewBag.Info
+    </div>
+}
+
+<div class="tableContainer">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col">Created</th>
+                <th scope="col">Updated</th>
+                <th scope="col" colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!(Model is null))
+            {
+                @foreach (var person in Model)
+                {
+                    <tr class="person">
+                        <th scope="row">@person.ID</th>
+                        <td>@person.FirstName</td>
+                        <td>@person.LastName</td>
+                        <td>@person.Phone</td>
+                        <td>@person.Email</td>
+                        <td>@person.Created</td>
+                        @if (person.Updated != null)
+                        {
+                            <td>@person.Updated</td>
+                        }
+                        else
+                        {
+                            <td>unedited</td>
+                        }
+                        <td><a class="btn btn-danger action" asp-action="RemoveConfirm" asp-route-id="@person.ID">Delete</a></td>
+                        <td><a class="btn btn-info action" asp-action="Edit" asp-route-id="@person.ID">Edit</a></td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+@if ((int)ViewBag.AllRows > 1)
+{
+    <nav aria-label="...">
+        <ul class="pagination">
+            @for (int i = 1; i <= (int)ViewBag.AllRows; i++)
+            {
+                if (ViewBag.page == i)
+                {
+                    <li class="page-item active">
+                        <span class="page-link">
+                            @i
+                            <span class="sr-only">(current)</span>
+                        </span>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item">
+                        <a asp-action="index" asp-route-page="@i" class="page-link">@i</a>
+                    </li>
+                }
+            }
+        </ul>
+    </nav>
+}

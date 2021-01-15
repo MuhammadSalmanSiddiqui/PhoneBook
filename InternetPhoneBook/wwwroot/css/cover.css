@@ -1,0 +1,77 @@
+﻿/*https://www.toptal.com*/
+body {
+    padding-top: 5rem;
+    background-image: url(../img/grey_background.png);
+    min-width: 60rem;
+}
+
+.starter-template {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.person {
+    background-color: lightgray;
+}
+
+.tableContainer {
+    min-height: 15rem;
+}
+
+.action {
+    width: 100px;
+}
+
+.nav-item {
+    margin: auto;
+    margin-right: 15px;
+}
+
+.badge:hover {
+    background-color: black;
+}
+
+.addForm {
+    width: 400px;
+    margin: auto;
+    background-color: #50bb50;
+    padding: 20px;
+    border: 5px solid green;
+    border-radius: 25px;
+}
+
+.removeConfirm {
+    width: 400px;
+    margin: auto;
+    background-color: firebrick;
+    padding: 20px;
+    border: 5px solid red;
+    border-radius: 25px;
+}
+.alert {
+    margin-bottom:0px;
+}
+
+
+#name {
+    font-size: 48px;
+}
+
+.validation-summary-errors {
+    border: 1px solid #f00;
+    background-color: #fee;
+    text-align: left;
+    margin-bottom: 20px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.input-validation-error {
+    border:1px solid #f00;
+    background-color: lightcoral;
+}
+
+.input-validation {
+    border: 1px solid #f00;
+    background-color: lightgreen;
+}

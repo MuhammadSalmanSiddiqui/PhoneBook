@@ -1,0 +1,27 @@
+﻿@model InternetPhoneBook.Models.PersonModel
+
+<div class="addForm">
+    <form asp-action="Edit" method="post">
+        <div asp-validation-summary="All"></div>
+        <div class="form-group">
+            <label asp-for="FirstName">First Name</label>
+            <input asp-for="FirstName" type="text" class="form-control" placeholder="Alicja" />
+        </div>
+        <div class="form-group">
+            <label asp-for="LastName">Last Name</label>
+            <input asp-for="LastName" class="form-control" placeholder="Nowak" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Phone">Phone</label>
+            <input asp-for="Phone" class="form-control" placeholder="435098567" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email">E-mail</label>
+            <input asp-for="Email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+        </div>
+        <input asp-for="ID" value="@Model.ID" type="hidden" />
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
